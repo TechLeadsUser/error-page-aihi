@@ -6,7 +6,7 @@ import techBg from "@/assets/tech-circuit-bg.jpg";
 const Hero404 = () => {
   return (
     <section 
-      className="relative min-h-[70vh] flex items-center justify-center px-4 py-12 overflow-hidden"
+      className="relative min-h-[60vh] flex items-center justify-center px-4 py-12 overflow-hidden"
       style={{
         backgroundImage: `url(${techBg})`,
         backgroundSize: 'cover',

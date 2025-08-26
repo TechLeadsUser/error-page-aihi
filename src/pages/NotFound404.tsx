@@ -15,11 +15,11 @@ const NotFound404 = () => {
   }, [location.pathname]);
 
   return (
-    <main className="min-h-screen bg-background">
+    <>
       <Hero404 />
       <PopularDestinations />
       <ContactSupport />
-    </main>
+    </>
   );
 };
 
