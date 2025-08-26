@@ -2,95 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AIHI IT Consulting Design System - Dark Theme with Neon Tech Accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* AIHI Brand Colors - Dark Theme */
+    --background: 219 58% 7%; /* #0B0F1A - Primary background */
+    --background-elevated: 219 58% 9%; /* #0E1424 - Elevated surfaces */
+    --foreground: 225 35% 91%; /* #E6EAF2 - Primary text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 219 58% 9%; /* #0E1424 - Card background */
+    --card-foreground: 225 35% 91%; /* #E6EAF2 - Card text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 219 58% 9%;
+    --popover-foreground: 225 35% 91%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Cosmic Violet Gradient */
+    --primary: 256 82% 58%; /* #7C3AED - Start of violet gradient */
+    --primary-end: 263 84% 40%; /* #4C1D95 - End of violet gradient */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Neon Emerald Gradient */
+    --secondary: 166 100% 41%; /* #00D084 - Start of emerald gradient */
+    --secondary-end: 166 100% 28%; /* #009035 - End of emerald gradient */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Support Colors */
+    --accent-blue: 204 100% 37%; /* #0076BE */
+    --accent-yellow: 39 100% 67%; /* #FFC857 */
+    --accent-orange: 18 100% 47%; /* #F25C00 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Text Colors */
+    --text-primary: 225 35% 91%; /* #E6EAF2 - High contrast */
+    --text-secondary: 225 23% 70%; /* #AAB3C5 - Secondary text */
+    --text-muted: 217 14% 52%; /* #6B7280 - Muted text */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Borders and inputs */
+    --border: 220 14% 21%; /* #1F2937 with opacity */
+    --input: 219 58% 9%; /* #0E1424 - Input background */
+    --input-border: 220 23% 24%; /* #2A3346 - Input border */
+    --ring: 256 82% 58%; /* Focus ring color */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Design System Variables */
+    --radius: 1rem; /* Base radius 16px */
+    --radius-lg: 1.25rem; /* Large radius 20px */
+    --radius-xl: 1.5rem; /* XL radius 24px */
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-end)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-end)));
+    --gradient-cosmic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
 
-    --sidebar-background: 0 0% 98%;
+    /* Glows and Effects */
+    --glow-primary: 0 0 40px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 40px hsl(var(--secondary) / 0.3);
+    --shadow-card: 0 8px 24px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 16px 48px hsl(0 0% 0% / 0.2);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Typography - Poppins Font */
+    --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  /* Force dark theme - no light mode toggle needed */
+  * {
+    @apply border-border;
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-family);
+  }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+  /* Custom animations */
+  @keyframes glitch {
+    0%, 100% { 
+      transform: translateX(0);
+      filter: hue-rotate(0deg);
+    }
+    20% { 
+      transform: translateX(-2px);
+      filter: hue-rotate(90deg);
+    }
+    40% { 
+      transform: translateX(2px);
+      filter: hue-rotate(180deg);
+    }
+    60% { 
+      transform: translateX(-1px);
+      filter: hue-rotate(270deg);
+    }
+    80% { 
+      transform: translateX(1px);
+      filter: hue-rotate(360deg);
+    }
+  }
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--glow-primary); }
+    50% { box-shadow: var(--glow-secondary); }
+  }
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
