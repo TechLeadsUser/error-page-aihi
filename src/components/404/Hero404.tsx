@@ -36,7 +36,7 @@ const Hero404 = () => {
 
         {/* Main content */}
         <div className="mb-12 space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-text-primary tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl xl:text-6xl font-semibold text-text-primary tracking-tight leading-tight lg:text-3xl">
             Page not found.
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
