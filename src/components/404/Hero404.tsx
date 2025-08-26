@@ -39,7 +39,7 @@ const Hero404 = () => {
           <h2 className="text-3xl sm:text-4xl xl:text-6xl font-semibold text-text-primary tracking-tight leading-tight lg:text-3xl">
             Page not found.
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed lg:text-xl">
             The link may be broken or the page may have moved. Let's get you back on track.
           </p>
         </div>
