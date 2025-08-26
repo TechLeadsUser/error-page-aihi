@@ -2,27 +2,28 @@ import { Button } from "@/components/ui/button";
 import { SearchInput } from "@/components/ui/search-input";
 import { Link } from "react-router-dom";
 import techBg from "@/assets/tech-circuit-bg.jpg";
-
 const Hero404 = () => {
-  return (
-    <section 
-      className="relative min-h-[60vh] flex items-center justify-center px-4 py-12 overflow-hidden"
-      style={{
-        backgroundImage: `url(${techBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
+  return <section className="relative min-h-[60vh] flex items-center justify-center px-4 py-12 overflow-hidden" style={{
+    backgroundImage: `url(${techBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}>
       {/* Background overlay */}
       <div className="absolute inset-0 bg-background/80" />
       
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-2 h-2 bg-primary rounded-full animate-float" />
-        <div className="absolute top-40 right-20 w-1 h-1 bg-secondary rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-secondary rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-40 right-20 w-1 h-1 bg-secondary rounded-full animate-float" style={{
+        animationDelay: '1s'
+      }} />
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-primary rounded-full animate-float" style={{
+        animationDelay: '2s'
+      }} />
+        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-secondary rounded-full animate-float" style={{
+        animationDelay: '0.5s'
+      }} />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -51,28 +52,14 @@ const Hero404 = () => {
             </Link>
           </Button>
           <Button variant="secondary" size="lg" asChild>
-            <Link to="/services">
-              Browse Services
-            </Link>
+            
           </Button>
-          <button className="text-primary font-medium hover:underline underline-offset-4 transition-all duration-200 hover:text-primary/80">
-            Report an issue
-          </button>
+          
         </div>
 
         {/* Search */}
-        <div className="max-w-md mx-auto">
-          <SearchInput 
-            placeholder="Search AIHI…"
-            className="w-full"
-          />
-          <p className="text-xs text-text-muted mt-2 text-center">
-            Press <kbd className="px-2 py-1 bg-background-elevated rounded text-xs">⌘K</kbd> for quick search
-          </p>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero404;
