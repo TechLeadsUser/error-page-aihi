@@ -29,7 +29,7 @@ const Hero404 = () => {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* 404 Number with glitch effect */}
         <div className="mb-8">
-          <h1 className="text-8xl sm:text-9xl xl:text-[12rem] font-bold text-primary tracking-extra-tight animate-glitch leading-none lg:text-9xl">
+          <h1 className="text-8xl sm:text-9xl font-bold text-primary tracking-extra-tight animate-glitch leading-none lg:text-9xl xl:text-9xl">
             404
           </h1>
         </div>
